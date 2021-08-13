@@ -38,3 +38,13 @@
 }
 
 ```
+This code copies an existing AMI. If you want to add provisioning code (which you most likely will) you can add a block like so:
+```
+"provisioners": [{
+    "type": "shell"
+    "script": "install.sh"
+}
+]
+```
+The "install.sh" just has to be in the same location as the json. If you want you can have inline code by using the line `inline: ["echo foo"]`
+More information over at https://www.packer.io/docs/provisioners/shell
